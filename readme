@@ -1,0 +1,42 @@
+
+
+Day	Topic
+1	The Data Engineering, Big Data, AI & ML and Data Analysis Ecosystem
+	Python Syntax Review- what do we need to know?
+	Introduction to Machine Learning, objectives and types
+	Data Wrangling and cleaning with pandas
+	Exploratory Data Analysis(EDA)
+	Overfitting and Underfitting
+	Variance, Co-variance, Correlation; Bias-Variance; Decomposition and Tradeoff
+	Good v/s Bad data
+	Feature Engineering Deep Dive
+	Errors and Optimizations in Machine learning
+	Model Training, Validation, and Deployment using Azure ML
+2	History and purpose of Scikit-learn
+	Overview of various Scikit-learn algorithms
+	Using ScikitLearn for ML models- Classification [multiple algorithms- 8 algorithms- theoretically discussed]
+	KMeans and KNN
+	Hands-on with Scikit-Learn Models (Linear Regression, Decision Trees, Random Forest, etc.)
+	Model Evaluation and Hyperparameter Optimization: Grid search v/s Random Search
+	Selecting the best model
+3	What is NLP?
+	Importance of NLP in AI
+	Key NLP Techniques and Algorithms
+	The Hidden Art of Communication - Hidden Markov Model
+	Parsing and Text Analysis
+	Parsing in Depth: Goals and Techniques
+	Stemming and Lemmatization with Spacy and Textacy
+	Introduction to Cloud Services for NLP
+	Named Entity Extraction
+	Deep dive into Natural Language Toolkit (NLTK)
+	Sentiment Analysis
+	Designing an NLP pipeline with prebuilt models
+4	Overview on Azure OpenAI Service
+	Generative AI models and Azure OpenAI base models
+	Azure OpenAI's language, code, and image capabilities
+	Prompt Engineering
+	Azure OpenAI's responsible AI practices and limited access policies
+	Optimizing Azure OpenAI models' performance with Prompt Engineering
+	Best practices for deploying Generative AI models at scale
+	Use the Azure OpenAI Studio, console, or REST API to deploy a base model and test it in the Studio's playgrounds.
+5	One day hackathon style capstone project activity supported by the trainer
