@@ -1,0 +1,295 @@
+
+
+1. Reading the data
+2. Cleaning the data
+3. Perform Learning (multiple models)
+4. EVALUATION
+5. Best Model Deployment
+6. Monitor the model 
+7. Reinforce/Retrain the model (Step 2)
+
+
+
+Ethical AI Principles
+
+
+1. Reading the data
+        1. BIAS while collecting, PII, SPDI (health insurance, payments) 
+        2. Trust the data? Sources? 
+        3. Fair? Racism, discrimination, class imbalance (generate synthetic data, collect more, reduce the larger class, decentralise, community) 
+        4. PRIVACY
+2. Cleaning the data
+        1. BIAS while labelling, missing values removal, normalising 
+3. Perform Learning (multiple models)
+4. EVALUATION
+        1. ACCOUNTABILITY 
+        2. Safety
+5. Best Model Deployment
+        1. Safety
+6. Monitor the model 
+    1. ACCOUNTABILITY
+7. Reinforce/Retrain the model (Step 2)
+
+
+Data -> 
+Unstructured, semi, structured 
+
+Structured-> stats -> custom, auto, pre-build-> SQL, Warehouse, CSV in lake
+
+Semi-> convert into a structure meant for warehouse-> pre-built models-> WAREHOUSE 
+
+Unstructured-> NLP/CV/File IO -> structured data-> stats or AI algos	-> custom, auto, pre-build -> Data Lake
+
+
+READ the data-> ALL THE COLUMNS 
+You need to identify -> y = f(x) + bias 
+
+Y = mx + c
+
+X-> inputs/dimensions; Y -> output/label
+
+Y-> regression or classification?
+
+How high can I Jump? -> Reg
+
+Discount to offer? -> 5%, 10%, 15% 
+		-> 1,2,3,4…..99%
+
+Object inside an image-> classification
+
+Cancer in an image-> regression 
+
+Diabetes or no diabetes? -> classification; regression 
+
+STATISTICS-> unique values
+
+Value_counts -> 2000 rows of data / 50 unique values-> classification
+
+2000 rows of data/ 1200 unique values 
+	-> regression 
+
+Distribution of data-> bell curve/Gaussian curve-> 
+VISUALIZE 
+
+OUTLIERS (treat) -> dimension reduction
+
+
+Reduction —> treat outliers 
+
+Statistician/math -> eliminated outlier 
+
+Machine learning -> ignore and move on; -> visualization-> box plot 
+
+V = u + gt -> u, t (variables), g-> constant
+G-> weight multiplied into variable t
+1 -> weight multiplied into variable u 
+
+Y2 = 4ax -> w = 4a
+Y = mx + c = m
+Y = 2a + 3b - c + 42 = [2,3,-1] 
+
+ML-> calculating values for weights and biases so that your equation makes sense!
+During ML-> constant is input data, and variables are W and B
+
+
+Y = w1*age + w2*happiness + bias 
+90 = w1*10 + w2*1 + bias 
+w1=8, w2=9, bias=1
+90 = w1*12 + w2*1 + bias
+(OPTIMIZER)-> LR to calculate new values for w1 and w2
+
+
+
+Age   Happiness. Longitivity(Y) pY
+10			1 											90									89
+12			1												90									87
+30			0.5									80										84
+40			0.4									70										66
+60			0.7 									50											42
+
+2 unknown, 2 examples-> x,y
+
+When examples are more than equation and exact values can’t be found-> THAT IS THE USE CASE FOR ML!!!
+
+
+
+Integration ( x -> n1, n2) -> x^2
+
+X2 -> 2X^3
+
+M1-> 99.2
+M2-> 98 M3-> 89
+
+Learning Rate??
+
+LR too high-> skipping over right answer
+LR too low-> never reach the answer!
+
+Two limits-> continuous, discrete 
+	-> 20 nums between 0.1 to 0.2 
+-> [0.1, 0.001, 0.002, 0.02]
+
+
+Gradient Descent-> lowest error-> best LR value 
+
+1. EPOCH (step or iteration)
+        1. FIT the model and calculate ERROR 
+                1. How- Error Function or Loss Function 
+                2. What is calculated- continuous or discrete numbers
+        2. Optimiser Function-> Reduce the ERRORS 
+                1. Start with an initial learning rate
+                2. Fluctuate Learning Rate on every EPOCH
+                3. How to fluctuate that rate-> OPTIMIZER FUNCTION
+                4. OBJECTIVE-> minimisation or maximisation
+                    1. LOSS-> mse, rmse, distance-> MINIMIZATION
+                    2. PROFIT-> ACCURACY, PRECISION-> MAXIMIZATION
+        3. Either new ERROR is lower or higher than previous ERROR
+            1. LOWER-> you are going right! Keep on doing the same!
+            2. HIGHER-> some thing wrong, take a step back and introduce -1 * LR as the new value 
+            3. CONSTANT-> no learning is happening!!!!!
+
+
+
+
+
+How to Optimise Learning Rate?
+
+1. I started calculated W and B for my ML equation 
+2. W are calculated and then B is adjusted 
+3. Some initial assumption for W and B
+4. For each W combinations, we get separate ANSWERS
+5. Those answers will have an ERROR 
+6. We want to find NEW values for W and B so that next time ERROR reduces 
+7. For fluctuating W, we use OPTIMIZER FUNCTIONS
+        1. Gradient Descent 
+        2. Adaptive Gradient (AdaGrad)
+        3. Adam (Adaptive GD with momentum)
+
+CONFUSION MATRIX
+										Algo
+										D												ND
+
+Real			D.          True Positive					False	Negative
+
+					ND			False Positive					True Negative
+
+									Algo
+										D												ND
+
+Real			D.          True Positive					False	Negative
+
+					ND			False Positive					True Negative
+
+			Algo
+			A.      B      	  C
+A			TP		FP		FP
+B			FP		TP		FP
+C			FP		FP		TP
+
+
+Maximize -> TP; TN
+Minimize-> FP; FN 
+
+Accuracy Score-> correct answers/total answers
+
+Accuracy Score = (TP + TN) / (TP+TN+FP+FN)
+
+Precision and Recall 
+Precision -> TP / (TP+FP)
+Recall -> TP/ (TP+FN)
+F1 Score -> class imbalance -> 2 * Precision * Recall / (P+R)
+High F1 Score-> P+R low, P*R high 
+
+Accuracy Score-> first point of check 
+	-> all known good answers
+				-> predictions to known answers
+				-> known answers to predictions 
+
+Model to Model to Model 
+-> how many of these answers are same across all the trees?
+acc_score (P1, P2)
+		-> 50% -> 50% of all answers were exactly same!!!!
+SIMILARITY between the models:
+		accuracy score to calculate overlap % 
+
+Time > 6? Yes-> Go have breakfast;
+						No-> Go back to sleep 
+
+Time > 7? Yes-> Go have breakfast
+						No-> listen to music 
+
+Breakfast=True? Money > 5? Go eat
+								Else go to sleep 
+
+P-Complete, NP-Complete (TREE)
+
+Graph Theory-> (Fitting, Traversal, Neighbor…)
+Tree Based
+Ensemble 
+Neural Network 
+Probability (Naive Bayes’ or conditional probability)
+
+Regression:
+
+MSE, MAE, RMSE, R2 Score, Spearman’s correlation
+
+While training and deployment, what should be the compute size?
+
+Data -> in memory -> replication factor of 3 
+
+10 GB of Data-> 3 X 10 = 30 GB of RAM
+10 PB of Data -> 30 PB of RAM
+
+
+TensorFlow/Spark/Databricks/HDFS -> batch reading processes 
+
+Random Forest -> 10 PB on disk; 30 PB on RAM 
+
+100 GB per Batch -> 300 GB on RAM 
+
+Batch process or stochastic process 
+
+ML-> Trees, Graph, Probability 
+				-> leaf nodes-> 
+
+ML Process: 
+	-> assumed some initial W, B 
+	-> based on this we read a row (or batch) and calculated ERROR (FORWARD PROP) 
+	-> Based on error, OPTIMIZER FUNCTION => updates learning rate=> new values of W and B are calculated (BACKWARD PROP)
+	-> Repeat for every row or batch
+	-> and then for EVERY ITERATION in EVERY EPOCH!!!
+
+1 EPOCH = N Iterations 
+1 Iteration = N Steps
+1 Step = N batch 
+1 Batch = N rows 
+
+example:
+1000 rows of sentences with sentiments 
+Batch size of 100 
+How many steps? = 10 steps 
+Every iteration will have 10 steps 
+
+Assuming 1 EPOCH = 1 ITERATION 
+		( 1 forward and 1 backward propagation in each EPOCH)
+
+model.fit -> model object-> which comes with a history 
+
+Tensorflow -> Too messy and complicated to work with
+Keras-> make life easier 
+	-> definitions of errors, metrics, losses, optimizers, layers 
+
+
+2 kind of models:
+1. Sequential -> layer by layer 
+2. Functional -> multiple inputs and outputs, every unit of layer is defined by the developer!
+            1. Advantage-> literally ANY SHAPE POSSIBLE!
+                1. Branching in NN
+                2. Conditional inputs
+                3. Multiple outputs 
+
+
+https://towardsdatascience.com/types-of-regularization-in-machine-learning-eb5ce5f9bf50 
+
+
+
